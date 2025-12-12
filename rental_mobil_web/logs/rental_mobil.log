@@ -1,0 +1,268 @@
+[2025-12-13 03:23:47] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-13 03:24:31] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental_mobil_web\settings.py changed, reloading.
+[2025-12-13 03:24:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-13 03:26:35] [INFO] [rental] Request: GET /admin/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:26:35] [INFO] [rental] Response: GET /admin/ - Status: 200 - Duration: 525ms
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /admin/ HTTP/1.1" 200 10545
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2025-12-13 03:26:35] [INFO] [django.server] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+[2025-12-13 03:26:36] [INFO] [django.server] "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+[2025-12-13 03:26:36] [INFO] [django.server] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+[2025-12-13 03:26:36] [INFO] [django.server] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+[2025-12-13 03:26:36] [INFO] [django.server] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+[2025-12-13 03:26:42] [INFO] [rental] Request: GET /admin/rental/logaktivitas/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:26:42] [INFO] [rental] Response: GET /admin/rental/logaktivitas/ - Status: 200 - Duration: 213ms
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /admin/rental/logaktivitas/ HTTP/1.1" 200 12992
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [rental] Request: GET /admin/jsi18n/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2025-12-13 03:26:42] [INFO] [rental] Response: GET /admin/jsi18n/ - Status: 200 - Duration: 68ms
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /admin/jsi18n/ HTTP/1.1" 200 7830
+[2025-12-13 03:26:42] [INFO] [django.server] "GET /static/admin/img/search.svg HTTP/1.1" 200 607
+[2025-12-13 03:26:47] [INFO] [rental] Request: GET /admin/rental/mobil/add/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:26:47] [INFO] [rental] Response: GET /admin/rental/mobil/add/ - Status: 200 - Duration: 322ms
+[2025-12-13 03:26:47] [INFO] [django.server] "GET /admin/rental/mobil/add/ HTTP/1.1" 200 14650
+[2025-12-13 03:26:47] [INFO] [rental] Request: GET /admin/jsi18n/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:26:47] [INFO] [django.server] "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[2025-12-13 03:26:47] [INFO] [django.server] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[2025-12-13 03:26:47] [INFO] [rental] Response: GET /admin/jsi18n/ - Status: 200 - Duration: 17ms
+[2025-12-13 03:26:47] [INFO] [django.server] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[2025-12-13 03:26:47] [INFO] [django.server] "GET /admin/jsi18n/ HTTP/1.1" 200 7830
+[2025-12-13 03:26:47] [INFO] [django.server] "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[2025-12-13 03:28:23] [INFO] [rental] Request: POST /admin/rental/mobil/add/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:28:23] [INFO] [rental] Mobil ditambahkan: test test - B 1272 CG
+[2025-12-13 03:28:23] [INFO] [rental] Response: POST /admin/rental/mobil/add/ - Status: 302 - Duration: 71ms
+[2025-12-13 03:28:23] [INFO] [django.server] "POST /admin/rental/mobil/add/ HTTP/1.1" 302 0
+[2025-12-13 03:28:23] [INFO] [rental] Request: GET /admin/rental/mobil/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:28:23] [INFO] [rental] Response: GET /admin/rental/mobil/ - Status: 200 - Duration: 81ms
+[2025-12-13 03:28:23] [INFO] [django.server] "GET /admin/rental/mobil/ HTTP/1.1" 200 16041
+[2025-12-13 03:28:23] [INFO] [rental] Request: GET /admin/jsi18n/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:28:23] [INFO] [rental] Response: GET /admin/jsi18n/ - Status: 200 - Duration: 12ms
+[2025-12-13 03:28:23] [INFO] [django.server] "GET /admin/jsi18n/ HTTP/1.1" 200 7830
+[2025-12-13 03:28:23] [INFO] [django.server] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+[2025-12-13 03:28:23] [INFO] [django.server] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761
+[2025-12-13 03:28:23] [INFO] [django.server] "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558
+[2025-12-13 03:28:29] [INFO] [rental] Request: GET /admin/rental/logaktivitas/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:28:29] [ERROR] [rental] Exception pada GET /admin/rental/logaktivitas/: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\templatetags\admin_list.py", line 441, in date_hierarchy
+    for day in days
+               ^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 390, in __iter__
+    self._fetch_all()
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 277, in __iter__
+    for row in compiler.results_iter(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\sql\compiler.py", line 1542, in apply_converters
+    value = converter(value, expression, connection)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\functions\datetime.py", line 354, in convert_value
+    raise ValueError(
+ValueError: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+[2025-12-13 03:28:30] [INFO] [rental] Request: GET /admin/rental/logaktivitas/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 03:28:30] [ERROR] [rental] Response: GET /admin/rental/logaktivitas/ - Status: 500 - Duration: 816ms
+[2025-12-13 03:28:30] [INFO] [django.server] - Broken pipe from ('127.0.0.1', 60176)
+[2025-12-13 03:28:30] [ERROR] [rental] Exception pada GET /admin/rental/logaktivitas/: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\templatetags\admin_list.py", line 441, in date_hierarchy
+    for day in days
+               ^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 390, in __iter__
+    self._fetch_all()
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\query.py", line 277, in __iter__
+    for row in compiler.results_iter(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\sql\compiler.py", line 1542, in apply_converters
+    value = converter(value, expression, connection)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\functions\datetime.py", line 354, in convert_value
+    raise ValueError(
+ValueError: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+[2025-12-13 03:28:30] [ERROR] [rental] Response: GET /admin/rental/logaktivitas/ - Status: 500 - Duration: 287ms
+[2025-12-13 03:28:30] [ERROR] [django.server] "GET /admin/rental/logaktivitas/ HTTP/1.1" 500 393507
+[2025-12-13 03:29:31] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental\admin.py changed, reloading.
+[2025-12-13 03:29:32] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-13 03:29:41] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental\admin.py changed, reloading.
+[2025-12-13 03:29:42] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-13 03:30:11] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental\admin.py changed, reloading.
+[2025-12-13 03:30:12] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader

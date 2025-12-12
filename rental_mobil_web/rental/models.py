@@ -154,3 +154,99 @@ class Pembayaran(models.Model):
     def __str__(self):
         return f"Pembayaran {self.penyewaan.kode_penyewaan} - Rp {self.jumlah:,.0f}"
 
+
+class Notifikasi(models.Model):
+    """Model untuk Notifikasi"""
+    
+    TIPE_CHOICES = [
+        ('info', 'Informasi'),
+        ('warning', 'Peringatan'),
+        ('success', 'Sukses'),
+        ('error', 'Error'),
+    ]
+    
+    KATEGORI_CHOICES = [
+        ('penyewaan_baru', 'Penyewaan Baru'),
+        ('pembayaran', 'Pembayaran'),
+        ('pengembalian', 'Pengembalian'),
+        ('keterlambatan', 'Keterlambatan'),
+        ('reminder', 'Pengingat'),
+        ('sistem', 'Sistem'),
+    ]
+    
+    judul = models.CharField(max_length=200)
+    pesan = models.TextField()
+    tipe = models.CharField(max_length=20, choices=TIPE_CHOICES, default='info')
+    kategori = models.CharField(max_length=30, choices=KATEGORI_CHOICES, default='sistem')
+    # Menggunakan integer untuk referensi karena tabel asli tidak dikelola Django
+    penyewaan_id_ref = models.IntegerField(null=True, blank=True, verbose_name='ID Penyewaan')
+    pelanggan_id_ref = models.IntegerField(null=True, blank=True, verbose_name='ID Pelanggan')
+    pelanggan_nama = models.CharField(max_length=100, blank=True, default='', verbose_name='Nama Pelanggan')
+    dibaca = models.BooleanField(default=False)
+    dikirim_email = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        db_table = 'notifikasi'
+        verbose_name = 'Notifikasi'
+        verbose_name_plural = 'Daftar Notifikasi'
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"[{self.get_tipe_display()}] {self.judul}"
+    
+    def tandai_dibaca(self):
+        """Tandai notifikasi sebagai sudah dibaca"""
+        self.dibaca = True
+        self.save()
+    
+    def get_penyewaan(self):
+        """Mendapatkan objek Penyewaan terkait"""
+        if self.penyewaan_id_ref:
+            try:
+                return Penyewaan.objects.get(id=self.penyewaan_id_ref)
+            except Penyewaan.DoesNotExist:
+                return None
+        return None
+    
+    def get_pelanggan(self):
+        """Mendapatkan objek Pelanggan terkait"""
+        if self.pelanggan_id_ref:
+            try:
+                return Pelanggan.objects.get(id=self.pelanggan_id_ref)
+            except Pelanggan.DoesNotExist:
+                return None
+        return None
+
+
+class LogAktivitas(models.Model):
+    """Model untuk Log Aktivitas User"""
+    
+    AKSI_CHOICES = [
+        ('create', 'Tambah'),
+        ('update', 'Ubah'),
+        ('delete', 'Hapus'),
+        ('view', 'Lihat'),
+        ('login', 'Login'),
+        ('logout', 'Logout'),
+    ]
+    
+    user = models.CharField(max_length=100, blank=True, default='system')
+    aksi = models.CharField(max_length=20, choices=AKSI_CHOICES)
+    model_name = models.CharField(max_length=50)
+    object_id = models.IntegerField(null=True, blank=True)
+    object_repr = models.CharField(max_length=255, blank=True, default='')
+    perubahan = models.TextField(blank=True, default='')
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    user_agent = models.CharField(max_length=255, blank=True, default='')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        db_table = 'log_aktivitas'
+        verbose_name = 'Log Aktivitas'
+        verbose_name_plural = 'Log Aktivitas'
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"[{self.created_at}] {self.user} - {self.get_aksi_display()} {self.model_name}"
+
