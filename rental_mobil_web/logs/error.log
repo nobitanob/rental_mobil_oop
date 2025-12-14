@@ -484,3 +484,4 @@ Traceback (most recent call last):
   File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 468, in catch_all_view
     raise Http404
 django.http.response.Http404
+ERROR 2025-12-14 06:57:03,695 <string> 38792 37652 Test ERROR message dari ujicoba

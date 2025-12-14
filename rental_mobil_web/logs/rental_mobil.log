@@ -424,3 +424,314 @@ django.http.response.Http404
 [2025-12-14 05:07:29] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
 [2025-12-14 05:26:29] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental\api_views.py changed, reloading.
 [2025-12-14 05:26:30] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-14 05:46:21] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 05:46:21] [WARNING] [rental] Response: POST /api/mobil/ - Status: 400 - Duration: 1ms
+[2025-12-14 05:52:10] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 05:52:10] [WARNING] [rental] Response: POST /api/mobil/ - Status: 400 - Duration: 3ms
+[2025-12-14 05:52:22] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 05:52:22] [WARNING] [rental] Response: POST /api/mobil/ - Status: 400 - Duration: 2ms
+[2025-12-14 05:57:19] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 05:57:19] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 05:57:19] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 05:57:19] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 05:57:19] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 05:57:19] [INFO] [rental] Request: GET /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 05:57:19] [INFO] [rental] Response: GET /api/mobil/ - Status: 200 - Duration: 3ms
+[2025-12-14 06:01:02] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:01:02] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:01:02] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:01:02] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:01:02] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:01:02] [INFO] [rental] Request: GET /api/dashboard/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:02] [INFO] [rental] Response: GET /api/dashboard/ - Status: 200 - Duration: 15ms
+[2025-12-14 06:01:02] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:01:02] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:01:02] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:01:02] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:01:02] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:01:02] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:02] [WARNING] [rental] Response: POST /api/penyewaan/ - Status: 404 - Duration: 1ms
+[2025-12-14 06:01:03] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:03] [INFO] [rental] Mobil ditambahkan: Daihatsu Xenia - E 2222 TST
+[2025-12-14 06:01:03] [INFO] [rental] Response: POST /api/mobil/ - Status: 201 - Duration: 6ms
+[2025-12-14 06:01:03] [INFO] [rental] Request: POST /api/pelanggan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:03] [INFO] [rental] Pelanggan ditambahkan: Test E2E Customer - NIK: 3201234567890123
+[2025-12-14 06:01:03] [INFO] [rental] Response: POST /api/pelanggan/ - Status: 201 - Duration: 5ms
+[2025-12-14 06:01:03] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:03] [INFO] [rental.penyewaan] Penyewaan baru: RENT-202512-0001 - Pelanggan: Test E2E Customer - Mobil: Daihatsu Xenia (2024) - E 2222 TST
+[2025-12-14 06:01:03] [INFO] [rental.notifikasi] Notifikasi dibuat: Penyewaan Baru - RENT-202512-0001 - Kategori: penyewaan_baru
+[2025-12-14 06:01:04] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: e2e@test.com
+[2025-12-14 06:01:04] [INFO] [rental] Mobil diupdate: Daihatsu Xenia - E 2222 TST
+[2025-12-14 06:01:04] [INFO] [rental] Response: POST /api/penyewaan/ - Status: 201 - Duration: 1358ms
+[2025-12-14 06:01:04] [INFO] [rental] Request: GET /api/mobil/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:04] [INFO] [rental] Response: GET /api/mobil/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:01:04] [INFO] [rental] Request: GET /api/penyewaan/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:04] [INFO] [rental] Response: GET /api/penyewaan/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:01:04] [INFO] [rental] Request: POST /api/penyewaan/1/kembalikan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:04] [INFO] [rental.penyewaan] Penyewaan diupdate: RENT-202512-0001 - Status: selesai
+[2025-12-14 06:01:04] [INFO] [rental.notifikasi] Notifikasi dibuat: Pengembalian Sukses - RENT-202512-0001 - Kategori: pengembalian
+[2025-12-14 06:01:04] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: e2e@test.com
+[2025-12-14 06:01:04] [INFO] [rental] Mobil diupdate: Daihatsu Xenia - E 2222 TST
+[2025-12-14 06:01:04] [INFO] [rental] Response: POST /api/penyewaan/1/kembalikan/ - Status: 200 - Duration: 16ms
+[2025-12-14 06:01:04] [INFO] [rental] Request: GET /api/mobil/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:04] [INFO] [rental] Response: GET /api/mobil/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:01:04] [INFO] [rental] Request: GET /api/penyewaan/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:04] [INFO] [rental] Response: GET /api/penyewaan/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:01:05] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:01:05] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:01:05] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Mitsubishi Xpander - B 7777 NEW
+[2025-12-14 06:01:05] [INFO] [rental] Response: POST /api/mobil/ - Status: 201 - Duration: 4ms
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:01:05] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:01:05] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:01:05] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:01:05] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:01:05] [INFO] [rental.penyewaan] Penyewaan baru: RENT-202512-0001 - Pelanggan: John Doe - Mobil: Toyota Avanza (2023) - B 1234 ABC
+[2025-12-14 06:01:05] [INFO] [rental.notifikasi] Notifikasi dibuat: Penyewaan Baru - RENT-202512-0001 - Kategori: penyewaan_baru
+[2025-12-14 06:01:05] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: john@example.com
+[2025-12-14 06:01:05] [INFO] [rental] Mobil diupdate: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:01:05] [INFO] [rental] Response: POST /api/penyewaan/ - Status: 201 - Duration: 23ms
+[2025-12-14 06:02:30] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:30] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:30] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:30] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:30] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:30] [INFO] [rental] Request: GET /api/dashboard/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:30] [INFO] [rental] Response: GET /api/dashboard/ - Status: 200 - Duration: 10ms
+[2025-12-14 06:02:30] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:30] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:30] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:30] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:30] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [WARNING] [rental] Response: POST /api/penyewaan/ - Status: 404 - Duration: 1ms
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [WARNING] [rental] Response: POST /api/penyewaan/ - Status: 404 - Duration: 1ms
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Request: GET /api/mobil/99999/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [WARNING] [rental] Response: GET /api/mobil/99999/ - Status: 404 - Duration: 0ms
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [WARNING] [rental] Response: POST /api/mobil/ - Status: 400 - Duration: 0ms
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:31] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:31] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [INFO] [rental] Mobil ditambahkan: Daihatsu Xenia - E 2222 TST
+[2025-12-14 06:02:31] [INFO] [rental] Response: POST /api/mobil/ - Status: 201 - Duration: 6ms
+[2025-12-14 06:02:31] [INFO] [rental] Request: POST /api/pelanggan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [INFO] [rental] Pelanggan ditambahkan: Test E2E Customer - NIK: 3201234567890123
+[2025-12-14 06:02:31] [INFO] [rental] Response: POST /api/pelanggan/ - Status: 201 - Duration: 3ms
+[2025-12-14 06:02:31] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:31] [INFO] [rental.penyewaan] Penyewaan baru: RENT-202512-0001 - Pelanggan: Test E2E Customer - Mobil: Daihatsu Xenia (2024) - E 2222 TST
+[2025-12-14 06:02:31] [INFO] [rental.notifikasi] Notifikasi dibuat: Penyewaan Baru - RENT-202512-0001 - Kategori: penyewaan_baru
+[2025-12-14 06:02:33] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: e2e@test.com
+[2025-12-14 06:02:33] [INFO] [rental] Mobil diupdate: Daihatsu Xenia - E 2222 TST
+[2025-12-14 06:02:33] [INFO] [rental] Response: POST /api/penyewaan/ - Status: 201 - Duration: 1282ms
+[2025-12-14 06:02:33] [INFO] [rental] Request: GET /api/mobil/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental] Response: GET /api/mobil/1/ - Status: 200 - Duration: 0ms
+[2025-12-14 06:02:33] [INFO] [rental] Request: GET /api/penyewaan/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental] Response: GET /api/penyewaan/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:02:33] [INFO] [rental] Request: POST /api/penyewaan/1/kembalikan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental.penyewaan] Penyewaan diupdate: RENT-202512-0001 - Status: selesai
+[2025-12-14 06:02:33] [INFO] [rental.notifikasi] Notifikasi dibuat: Pengembalian Sukses - RENT-202512-0001 - Kategori: pengembalian
+[2025-12-14 06:02:33] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: e2e@test.com
+[2025-12-14 06:02:33] [INFO] [rental] Mobil diupdate: Daihatsu Xenia - E 2222 TST
+[2025-12-14 06:02:33] [INFO] [rental] Response: POST /api/penyewaan/1/kembalikan/ - Status: 200 - Duration: 14ms
+[2025-12-14 06:02:33] [INFO] [rental] Request: GET /api/mobil/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental] Response: GET /api/mobil/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:02:33] [INFO] [rental] Request: GET /api/penyewaan/1/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental] Response: GET /api/penyewaan/1/ - Status: 200 - Duration: 1ms
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:33] [INFO] [rental] Request: POST /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Mitsubishi Xpander - B 7777 NEW
+[2025-12-14 06:02:33] [INFO] [rental] Response: POST /api/mobil/ - Status: 201 - Duration: 3ms
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Mitsubishi Xpander - B 7777 NEW
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:33] [INFO] [rental] Mobil ditambahkan: Test Delete - X 0000 DEL
+[2025-12-14 06:02:33] [INFO] [rental] Request: DELETE /api/mobil/8/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Test Delete - X 0000 DEL
+[2025-12-14 06:02:33] [INFO] [rental] Response: DELETE /api/mobil/8/ - Status: 200 - Duration: 6ms
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:33] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:33] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Request: GET /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:34] [INFO] [rental] Response: GET /api/mobil/ - Status: 200 - Duration: 0ms
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Request: GET /api/mobil/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:34] [INFO] [rental] Response: GET /api/mobil/ - Status: 200 - Duration: 0ms
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Request: PUT /api/mobil/15/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:34] [INFO] [rental] Mobil diupdate: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Response: PUT /api/mobil/15/ - Status: 200 - Duration: 5ms
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:34] [INFO] [rental.penyewaan] Penyewaan baru: RENT-202512-0001 - Pelanggan: John Doe - Mobil: Toyota Avanza (2023) - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental.notifikasi] Notifikasi dibuat: Penyewaan Baru - RENT-202512-0001 - Kategori: penyewaan_baru
+[2025-12-14 06:02:34] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: john@example.com
+[2025-12-14 06:02:34] [INFO] [rental] Mobil diupdate: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Response: POST /api/penyewaan/ - Status: 201 - Duration: 19ms
+[2025-12-14 06:02:34] [WARNING] [rental.penyewaan] Penyewaan dihapus: RENT-202512-0001
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:34] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:34] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:34] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:35] [INFO] [rental] Request: POST /api/penyewaan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:35] [WARNING] [rental] Response: POST /api/penyewaan/ - Status: 400 - Duration: 1ms
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:35] [INFO] [rental.penyewaan] Penyewaan baru: RENT-TEST-0001 - Pelanggan: John Doe - Mobil: Honda Jazz (2022) - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental.notifikasi] Notifikasi dibuat: Penyewaan Baru - RENT-TEST-0001 - Kategori: penyewaan_baru
+[2025-12-14 06:02:35] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: john@example.com
+[2025-12-14 06:02:35] [INFO] [rental] Mobil diupdate: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Request: POST /api/penyewaan/2/kembalikan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:35] [INFO] [rental.penyewaan] Penyewaan diupdate: RENT-TEST-0001 - Status: selesai
+[2025-12-14 06:02:35] [INFO] [rental.notifikasi] Notifikasi dibuat: Pengembalian Sukses - RENT-TEST-0001 - Kategori: pengembalian
+[2025-12-14 06:02:35] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: john@example.com
+[2025-12-14 06:02:35] [INFO] [rental] Mobil diupdate: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Response: POST /api/penyewaan/2/kembalikan/ - Status: 200 - Duration: 15ms
+[2025-12-14 06:02:35] [WARNING] [rental.penyewaan] Penyewaan dihapus: RENT-TEST-0001
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan ditambahkan: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan ditambahkan: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:35] [INFO] [rental] Mobil ditambahkan: Test Late - L 1111 ATE
+[2025-12-14 06:02:35] [INFO] [rental.penyewaan] Penyewaan baru: RENT-TEST-LATE - Pelanggan: Jane Smith - Mobil: Test Late (2023) - L 1111 ATE
+[2025-12-14 06:02:35] [INFO] [rental.notifikasi] Notifikasi dibuat: Penyewaan Baru - RENT-TEST-LATE - Kategori: penyewaan_baru
+[2025-12-14 06:02:35] [INFO] [rental.notifikasi] Email notifikasi terkirim ke: jane@example.com
+[2025-12-14 06:02:35] [INFO] [rental] Request: POST /api/penyewaan/3/kembalikan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 06:02:35] [INFO] [rental.penyewaan] Penyewaan diupdate: RENT-TEST-LATE - Status: terlambat
+[2025-12-14 06:02:35] [INFO] [rental] Mobil diupdate: Test Late - L 1111 ATE
+[2025-12-14 06:02:35] [INFO] [rental] Response: POST /api/penyewaan/3/kembalikan/ - Status: 200 - Duration: 9ms
+[2025-12-14 06:02:35] [WARNING] [rental.penyewaan] Penyewaan dihapus: RENT-TEST-LATE
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan dihapus: Jane Smith - NIK: 9876543210987654
+[2025-12-14 06:02:35] [INFO] [rental] Pelanggan dihapus: John Doe - NIK: 1234567890123456
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Test Late - L 1111 ATE
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Suzuki Ertiga - F 9999 ZZZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Honda Jazz - D 5678 XYZ
+[2025-12-14 06:02:35] [INFO] [rental] Mobil dihapus: Toyota Avanza - B 1234 ABC
+[2025-12-14 06:53:49] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental_mobil_web\urls.py changed, reloading.
+[2025-12-14 06:53:50] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-14 06:57:03] [INFO] [rental] Test INFO message dari ujicoba
+[2025-12-14 06:57:03] [WARNING] [rental] Test WARNING message dari ujicoba
+[2025-12-14 06:57:03] [ERROR] [rental] Test ERROR message dari ujicoba
+[2025-12-14 07:26:38] [ERROR] [rental.notifikasi] Gagal membuat notifikasi: (1054, "Unknown column 'penyewaan_id_ref' in 'field list'")
+[2025-12-14 07:31:04] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental_mobil_web\urls.py changed, reloading.
+[2025-12-14 07:31:05] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-14 07:36:06] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental_mobil_web\urls.py changed, reloading.
+[2025-12-14 07:36:07] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-14 07:36:15] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-14 07:36:51] [INFO] [rental] Request: GET /api/alert/config/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 07:36:51] [INFO] [rental] Response: GET /api/alert/config/ - Status: 200 - Duration: 1ms
+[2025-12-14 07:36:51] [INFO] [django.server] "GET /api/alert/config/ HTTP/1.1" 200 313
+[2025-12-14 07:39:33] [INFO] [rental] Request: GET /api/alert/check-keterlambatan/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-14 07:39:33] [INFO] [rental.notifikasi] API: Cek keterlambatan - 0 alert ditemukan
+[2025-12-14 07:39:33] [INFO] [rental] Response: GET /api/alert/check-keterlambatan/ - Status: 200 - Duration: 38ms
+[2025-12-14 07:39:33] [INFO] [django.server] "GET /api/alert/check-keterlambatan/ HTTP/1.1" 200 107
