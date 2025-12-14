@@ -266,3 +266,161 @@ ValueError: Database returned an invalid datetime value. Are time zone definitio
 [2025-12-13 03:29:42] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
 [2025-12-13 03:30:11] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental\admin.py changed, reloading.
 [2025-12-13 03:30:12] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-13 20:27:25] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-13 20:28:05] [INFO] [rental] Request: GET / - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-13 20:28:05] [INFO] [rental] Response: GET / - Status: 200 - Duration: 77ms
+[2025-12-13 20:28:05] [INFO] [django.server] "GET / HTTP/1.1" 200 12089
+[2025-12-13 20:28:05] [INFO] [rental] Request: GET /favicon.ico - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-13 20:28:05] [WARNING] [rental] Response: GET /favicon.ico - Status: 404 - Duration: 41ms
+[2025-12-13 20:28:05] [WARNING] [django.server] "GET /favicon.ico HTTP/1.1" 404 2218
+[2025-12-13 20:28:30] [INFO] [rental] Request: GET /admin/rental_mobil_web - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-13 20:28:30] [INFO] [rental] Response: GET /admin/rental_mobil_web - Status: 302 - Duration: 23ms
+[2025-12-13 20:28:30] [INFO] [django.server] "GET /admin/rental_mobil_web HTTP/1.1" 302 0
+[2025-12-13 20:28:30] [INFO] [rental] Request: GET /admin/login/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-13 20:28:31] [INFO] [rental] Response: GET /admin/login/ - Status: 200 - Duration: 518ms
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /admin/login/?next=/admin/rental_mobil_web HTTP/1.1" 200 4114
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/css/login.css HTTP/1.1" 200 951
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/css/responsive.css HTTP/1.1" 200 16194
+[2025-12-13 20:28:31] [INFO] [django.server] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[2025-12-13 20:28:42] [INFO] [rental] Request: POST /admin/login/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-13 20:28:44] [WARNING] [rental] Login gagal: admin@example.com - IP: 127.0.0.1
+[2025-12-13 20:28:44] [INFO] [rental] Response: POST /admin/login/ - Status: 200 - Duration: 1216ms
+[2025-12-13 20:28:44] [INFO] [django.server] "POST /admin/login/?next=/admin/rental_mobil_web HTTP/1.1" 200 4307
+[2025-12-13 20:28:55] [INFO] [rental] Request: POST /admin/login/ - IP: 127.0.0.1 - User: AnonymousUser
+[2025-12-13 20:28:57] [INFO] [rental] User login: admin - IP: 127.0.0.1
+[2025-12-13 20:28:57] [INFO] [rental] Response: POST /admin/login/ - Status: 302 - Duration: 1202ms
+[2025-12-13 20:28:57] [INFO] [django.server] "POST /admin/login/?next=/admin/rental_mobil_web HTTP/1.1" 302 0
+[2025-12-13 20:28:57] [INFO] [rental] Request: GET /admin/rental_mobil_web - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:28:57] [ERROR] [rental] Exception pada GET /admin/rental_mobil_web: 
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 266, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\decorators\common.py", line 23, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 468, in catch_all_view
+    raise Http404
+django.http.response.Http404
+[2025-12-13 20:28:57] [WARNING] [rental] Response: GET /admin/rental_mobil_web - Status: 404 - Duration: 151ms
+[2025-12-13 20:28:57] [WARNING] [django.server] "GET /admin/rental_mobil_web HTTP/1.1" 404 6997
+[2025-12-13 20:32:46] [INFO] [rental] Request: GET /admin/rental_mobil_web - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:32:46] [ERROR] [rental] Exception pada GET /admin/rental_mobil_web: 
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 266, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\decorators\common.py", line 23, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 468, in catch_all_view
+    raise Http404
+django.http.response.Http404
+[2025-12-13 20:32:46] [WARNING] [rental] Response: GET /admin/rental_mobil_web - Status: 404 - Duration: 17ms
+[2025-12-13 20:32:46] [WARNING] [django.server] "GET /admin/rental_mobil_web HTTP/1.1" 404 6997
+[2025-12-13 20:32:50] [INFO] [rental] Request: GET /admin/rental_mobil_web - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:32:50] [ERROR] [rental] Exception pada GET /admin/rental_mobil_web: 
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 266, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\decorators\common.py", line 23, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\sites.py", line 468, in catch_all_view
+    raise Http404
+django.http.response.Http404
+[2025-12-13 20:32:50] [WARNING] [rental] Response: GET /admin/rental_mobil_web - Status: 404 - Duration: 17ms
+[2025-12-13 20:32:50] [WARNING] [django.server] "GET /admin/rental_mobil_web HTTP/1.1" 404 6997
+[2025-12-13 20:34:47] [INFO] [rental] Request: GET /admin/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:34:47] [INFO] [rental] Response: GET /admin/ - Status: 200 - Duration: 81ms
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /admin/ HTTP/1.1" 200 11241
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/css/responsive.css HTTP/1.1" 200 16194
+[2025-12-13 20:34:47] [INFO] [django.server] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[2025-12-13 20:34:48] [INFO] [django.server] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+[2025-12-13 20:34:48] [INFO] [django.server] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+[2025-12-13 20:34:48] [INFO] [django.server] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+[2025-12-13 20:34:48] [INFO] [django.server] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+[2025-12-13 20:34:59] [INFO] [rental] Request: GET /admin/rental/mobil/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:34:59] [INFO] [rental] Response: GET /admin/rental/mobil/ - Status: 200 - Duration: 282ms
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /admin/rental/mobil/ HTTP/1.1" 200 15159
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [rental] Request: GET /admin/jsi18n/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[2025-12-13 20:34:59] [INFO] [django.server] "GET /static/admin/css/changelists.css HTTP/1.1" 200 7501
+[2025-12-13 20:35:00] [INFO] [django.server] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[2025-12-13 20:35:00] [INFO] [rental] Response: GET /admin/jsi18n/ - Status: 200 - Duration: 74ms
+[2025-12-13 20:35:00] [INFO] [django.server] "GET /admin/jsi18n/ HTTP/1.1" 200 7830
+[2025-12-13 20:35:00] [INFO] [django.server] "GET /static/admin/img/search.svg HTTP/1.1" 200 607
+[2025-12-13 20:35:00] [INFO] [django.server] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+[2025-12-13 20:35:00] [INFO] [django.server] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761
+[2025-12-13 20:35:32] [INFO] [rental] Request: GET /admin/rental/logaktivitas/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:35:32] [INFO] [rental] Response: GET /admin/rental/logaktivitas/ - Status: 200 - Duration: 37ms
+[2025-12-13 20:35:32] [INFO] [django.server] "GET /admin/rental/logaktivitas/ HTTP/1.1" 200 17169
+[2025-12-13 20:35:32] [INFO] [rental] Request: GET /admin/jsi18n/ - IP: 127.0.0.1 - User: admin
+[2025-12-13 20:35:32] [INFO] [rental] Response: GET /admin/jsi18n/ - Status: 200 - Duration: 13ms
+[2025-12-13 20:35:32] [INFO] [django.server] "GET /admin/jsi18n/ HTTP/1.1" 200 7830
+[2025-12-14 05:07:27] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental_mobil_web\urls.py changed, reloading.
+[2025-12-14 05:07:29] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-12-14 05:26:29] [INFO] [django.utils.autoreload] D:\python\rental_mobil_oop\rental_mobil_web\rental\api_views.py changed, reloading.
+[2025-12-14 05:26:30] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader

@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "rental-mobil-api",
+		"name": "Rental Mobil API",
+		"description": "Collection untuk testing API Rental Mobil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	],
+	"item": [
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Dashboard Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/dashboard/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "dashboard", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Mobil",
+			"item": [
+				{
+					"name": "Get All Mobil",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/mobil/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "mobil", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Mobil Tersedia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/mobil/?status=tersedia",
+							"host": ["{{base_url}}"],
+							"path": ["api", "mobil", ""],
+							"query": [
+								{
+									"key": "status",
+									"value": "tersedia"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Mobil by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/mobil/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "mobil", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Create Mobil",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"merk\": \"Toyota\",\n    \"model\": \"Avanza\",\n    \"tahun\": 2023,\n    \"plat_nomor\": \"B 1234 XYZ\",\n    \"harga_sewa_per_hari\": 350000,\n    \"status\": \"tersedia\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/mobil/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "mobil", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Mobil",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"harga_sewa_per_hari\": 400000,\n    \"status\": \"tersedia\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/mobil/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "mobil", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Mobil",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/mobil/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "mobil", "1", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Pelanggan",
+			"item": [
+				{
+					"name": "Get All Pelanggan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pelanggan/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "pelanggan", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Pelanggan by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pelanggan/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "pelanggan", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Create Pelanggan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nik\": \"1234567890123456\",\n    \"nama\": \"John Doe\",\n    \"alamat\": \"Jl. Contoh No. 123\",\n    \"no_telepon\": \"081234567890\",\n    \"email\": \"john@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pelanggan/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "pelanggan", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Pelanggan",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\": \"John Doe Updated\",\n    \"no_telepon\": \"081234567899\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pelanggan/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "pelanggan", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Pelanggan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pelanggan/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "pelanggan", "1", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Penyewaan",
+			"item": [
+				{
+					"name": "Get All Penyewaan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/penyewaan/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "penyewaan", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Penyewaan Aktif",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/penyewaan/?status=aktif",
+							"host": ["{{base_url}}"],
+							"path": ["api", "penyewaan", ""],
+							"query": [
+								{
+									"key": "status",
+									"value": "aktif"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Penyewaan by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/penyewaan/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "penyewaan", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Create Penyewaan (Sewa Mobil)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobil_id\": 1,\n    \"pelanggan_id\": 1,\n    \"tanggal_sewa\": \"2025-12-14\",\n    \"jumlah_hari\": 3\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/penyewaan/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "penyewaan", ""]
+						}
+					}
+				},
+				{
+					"name": "Kembalikan Mobil (Tepat Waktu)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tanggal_pengembalian\": \"2025-12-17\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/penyewaan/1/kembalikan/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "penyewaan", "1", "kembalikan", ""]
+						}
+					}
+				},
+				{
+					"name": "Kembalikan Mobil (Terlambat)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tanggal_pengembalian\": \"2025-12-20\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/penyewaan/1/kembalikan/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "penyewaan", "1", "kembalikan", ""]
+						}
+					}
+				}
+			]
+		}
+	]
+}
