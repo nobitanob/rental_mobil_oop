@@ -1,87 +1,155 @@
 """
 Django Signals untuk logging dan notifikasi otomatis
+Dengan fitur tracking perubahan field (before/after)
 """
 import logging
+import json
 from django.db.models.signals import post_save, post_delete, pre_save
 from django.dispatch import receiver
 from django.contrib.auth.signals import user_logged_in, user_logged_out, user_login_failed
 from .models import Mobil, Pelanggan, Penyewaan, Pembayaran, LogAktivitas
 from .services import NotifikasiService
+from .log_aktivitas_service import LogAktivitasService
+from .middleware import get_current_username, get_client_ip as get_middleware_client_ip, get_user_agent
 
 logger = logging.getLogger('rental')
 penyewaan_logger = logging.getLogger('rental.penyewaan')
 pembayaran_logger = logging.getLogger('rental.pembayaran')
 
 
+def create_log_with_user(aksi, model_name, object_id, object_repr, perubahan):
+    """Helper untuk membuat log aktivitas dengan user info"""
+    LogAktivitas.objects.create(
+        user=get_current_username(),
+        aksi=aksi,
+        model_name=model_name,
+        object_id=object_id,
+        object_repr=object_repr,
+        perubahan=perubahan,
+        ip_address=get_middleware_client_ip(),
+        user_agent=get_user_agent()
+    )
+
+
+# ==================== PRE-SAVE SIGNALS (untuk tracking perubahan) ====================
+
+@receiver(pre_save, sender=Mobil)
+def cache_mobil_pre_save(sender, instance, **kwargs):
+    """Cache data mobil sebelum disimpan untuk tracking perubahan"""
+    LogAktivitasService.cache_pre_save_data(instance)
+
+
+@receiver(pre_save, sender=Pelanggan)
+def cache_pelanggan_pre_save(sender, instance, **kwargs):
+    """Cache data pelanggan sebelum disimpan untuk tracking perubahan"""
+    LogAktivitasService.cache_pre_save_data(instance)
+
+
+@receiver(pre_save, sender=Penyewaan)
+def cache_penyewaan_pre_save(sender, instance, **kwargs):
+    """Cache data penyewaan sebelum disimpan untuk tracking perubahan"""
+    LogAktivitasService.cache_pre_save_data(instance)
+
+
+@receiver(pre_save, sender=Pembayaran)
+def cache_pembayaran_pre_save(sender, instance, **kwargs):
+    """Cache data pembayaran sebelum disimpan untuk tracking perubahan"""
+    LogAktivitasService.cache_pre_save_data(instance)
+
+
 # ==================== LOGGING SIGNALS ====================
 
 @receiver(post_save, sender=Mobil)
 def log_mobil_save(sender, instance, created, **kwargs):
-    """Log saat mobil dibuat atau diupdate"""
+    """Log saat mobil dibuat atau diupdate dengan detail perubahan"""
     aksi = 'create' if created else 'update'
     aksi_text = 'ditambahkan' if created else 'diupdate'
     
     logger.info(f"Mobil {aksi_text}: {instance.merk} {instance.model} - {instance.plat_nomor}")
     
-    LogAktivitas.objects.create(
-        aksi=aksi,
-        model_name='Mobil',
-        object_id=instance.id,
-        object_repr=str(instance),
-        perubahan=f"Status: {instance.status}"
-    )
+    # Dapatkan perubahan field jika update
+    if not created:
+        changes = LogAktivitasService.get_field_changes(instance)
+        perubahan = LogAktivitasService.format_changes(changes) if changes else f"Status: {instance.status}"
+    else:
+        perubahan = f"Mobil baru: {instance.merk} {instance.model}, Plat: {instance.plat_nomor}, Harga: Rp {instance.harga_sewa_per_hari:,.0f}"
+    
+    create_log_with_user(aksi, 'Mobil', instance.id, str(instance), perubahan)
 
 
 @receiver(post_delete, sender=Mobil)
 def log_mobil_delete(sender, instance, **kwargs):
-    """Log saat mobil dihapus"""
+    """Log saat mobil dihapus dengan backup data"""
     logger.info(f"Mobil dihapus: {instance.merk} {instance.model} - {instance.plat_nomor}")
     
-    LogAktivitas.objects.create(
-        aksi='delete',
-        model_name='Mobil',
-        object_id=instance.id,
-        object_repr=str(instance)
-    )
+    # Backup data yang dihapus
+    data_backup = {
+        'merk': instance.merk,
+        'model': instance.model,
+        'tahun': instance.tahun,
+        'plat_nomor': instance.plat_nomor,
+        'harga_sewa_per_hari': str(instance.harga_sewa_per_hari),
+        'status': instance.status
+    }
+    
+    create_log_with_user('delete', 'Mobil', instance.id, str(instance),
+        f"Data dihapus: {json.dumps(data_backup, ensure_ascii=False)}")
 
 
 @receiver(post_save, sender=Pelanggan)
 def log_pelanggan_save(sender, instance, created, **kwargs):
-    """Log saat pelanggan dibuat atau diupdate"""
+    """Log saat pelanggan dibuat atau diupdate dengan detail perubahan"""
     aksi = 'create' if created else 'update'
     aksi_text = 'ditambahkan' if created else 'diupdate'
     
     logger.info(f"Pelanggan {aksi_text}: {instance.nama} - NIK: {instance.nik}")
     
-    LogAktivitas.objects.create(
-        aksi=aksi,
-        model_name='Pelanggan',
-        object_id=instance.id,
-        object_repr=str(instance)
-    )
+    # Dapatkan perubahan field jika update
+    if not created:
+        changes = LogAktivitasService.get_field_changes(instance)
+        perubahan = LogAktivitasService.format_changes(changes) if changes else "Data pelanggan diupdate"
+    else:
+        perubahan = f"Pelanggan baru: {instance.nama}, NIK: {instance.nik}, Telp: {instance.no_telepon}"
+    
+    create_log_with_user(aksi, 'Pelanggan', instance.id, str(instance), perubahan)
 
 
 @receiver(post_delete, sender=Pelanggan)
 def log_pelanggan_delete(sender, instance, **kwargs):
-    """Log saat pelanggan dihapus"""
+    """Log saat pelanggan dihapus dengan backup data"""
     logger.info(f"Pelanggan dihapus: {instance.nama} - NIK: {instance.nik}")
     
-    LogAktivitas.objects.create(
-        aksi='delete',
-        model_name='Pelanggan',
-        object_id=instance.id,
-        object_repr=str(instance)
-    )
+    # Backup data yang dihapus
+    data_backup = {
+        'nik': instance.nik,
+        'nama': instance.nama,
+        'alamat': instance.alamat,
+        'no_telepon': instance.no_telepon,
+        'email': instance.email
+    }
+    
+    create_log_with_user('delete', 'Pelanggan', instance.id, str(instance),
+        f"Data dihapus: {json.dumps(data_backup, ensure_ascii=False)}")
 
 
 @receiver(post_save, sender=Penyewaan)
 def log_penyewaan_save(sender, instance, created, **kwargs):
-    """Log dan notifikasi saat penyewaan dibuat atau diupdate"""
+    """Log dan notifikasi saat penyewaan dibuat atau diupdate dengan detail perubahan"""
     if created:
         penyewaan_logger.info(
             f"Penyewaan baru: {instance.kode_penyewaan} - "
             f"Pelanggan: {instance.pelanggan.nama} - "
             f"Mobil: {instance.mobil}"
+        )
+        
+        perubahan = (
+            f"Penyewaan baru: {instance.kode_penyewaan}\n"
+            f"Pelanggan: {instance.pelanggan.nama}\n"
+            f"Mobil: {instance.mobil}\n"
+            f"Tanggal Sewa: {instance.tanggal_sewa}\n"
+            f"Tanggal Kembali: {instance.tanggal_kembali}\n"
+            f"Total Hari: {instance.total_hari}\n"
+            f"Total Biaya: Rp {instance.total_biaya:,.0f}"
         )
         
         # Buat notifikasi penyewaan baru
@@ -90,6 +158,10 @@ def log_penyewaan_save(sender, instance, created, **kwargs):
         except Exception as e:
             logger.error(f"Gagal membuat notifikasi penyewaan: {str(e)}")
     else:
+        # Dapatkan perubahan field
+        changes = LogAktivitasService.get_field_changes(instance)
+        perubahan = LogAktivitasService.format_changes(changes) if changes else f"Status: {instance.status}, Total: {instance.total_biaya}"
+        
         penyewaan_logger.info(
             f"Penyewaan diupdate: {instance.kode_penyewaan} - "
             f"Status: {instance.status}"
@@ -102,36 +174,47 @@ def log_penyewaan_save(sender, instance, created, **kwargs):
             except Exception as e:
                 logger.error(f"Gagal membuat notifikasi pengembalian: {str(e)}")
     
-    LogAktivitas.objects.create(
-        aksi='create' if created else 'update',
-        model_name='Penyewaan',
-        object_id=instance.id,
-        object_repr=str(instance),
-        perubahan=f"Status: {instance.status}, Total: {instance.total_biaya}"
-    )
+    create_log_with_user('create' if created else 'update', 'Penyewaan', instance.id, str(instance), perubahan)
 
 
 @receiver(post_delete, sender=Penyewaan)
 def log_penyewaan_delete(sender, instance, **kwargs):
-    """Log saat penyewaan dihapus"""
+    """Log saat penyewaan dihapus dengan backup data"""
     penyewaan_logger.warning(f"Penyewaan dihapus: {instance.kode_penyewaan}")
     
-    LogAktivitas.objects.create(
-        aksi='delete',
-        model_name='Penyewaan',
-        object_id=instance.id,
-        object_repr=str(instance)
-    )
+    # Backup data yang dihapus
+    data_backup = {
+        'kode_penyewaan': instance.kode_penyewaan,
+        'mobil': str(instance.mobil),
+        'pelanggan': str(instance.pelanggan),
+        'tanggal_sewa': str(instance.tanggal_sewa),
+        'tanggal_kembali': str(instance.tanggal_kembali),
+        'total_hari': instance.total_hari,
+        'total_biaya': str(instance.total_biaya),
+        'denda': str(instance.denda),
+        'status': instance.status
+    }
+    
+    create_log_with_user('delete', 'Penyewaan', instance.id, str(instance),
+        f"Data dihapus: {json.dumps(data_backup, ensure_ascii=False)}")
 
 
 @receiver(post_save, sender=Pembayaran)
 def log_pembayaran_save(sender, instance, created, **kwargs):
-    """Log dan notifikasi saat pembayaran dibuat atau diupdate"""
+    """Log dan notifikasi saat pembayaran dibuat atau diupdate dengan detail perubahan"""
     if created:
         pembayaran_logger.info(
             f"Pembayaran baru: Penyewaan {instance.penyewaan.kode_penyewaan} - "
             f"Jumlah: Rp {instance.jumlah:,.0f} - "
             f"Metode: {instance.metode_pembayaran}"
+        )
+        
+        perubahan = (
+            f"Pembayaran baru:\n"
+            f"Penyewaan: {instance.penyewaan.kode_penyewaan}\n"
+            f"Jumlah: Rp {instance.jumlah:,.0f}\n"
+            f"Metode: {instance.get_metode_pembayaran_display()}\n"
+            f"Status: {instance.get_status_display()}"
         )
         
         # Buat notifikasi pembayaran
@@ -144,33 +227,36 @@ def log_pembayaran_save(sender, instance, created, **kwargs):
         except Exception as e:
             logger.error(f"Gagal membuat notifikasi pembayaran: {str(e)}")
     else:
+        # Dapatkan perubahan field
+        changes = LogAktivitasService.get_field_changes(instance)
+        perubahan = LogAktivitasService.format_changes(changes) if changes else f"Jumlah: {instance.jumlah}, Status: {instance.status}"
+        
         pembayaran_logger.info(
             f"Pembayaran diupdate: Penyewaan {instance.penyewaan.kode_penyewaan} - "
             f"Status: {instance.status}"
         )
     
-    LogAktivitas.objects.create(
-        aksi='create' if created else 'update',
-        model_name='Pembayaran',
-        object_id=instance.id,
-        object_repr=str(instance),
-        perubahan=f"Jumlah: {instance.jumlah}, Status: {instance.status}"
-    )
+    create_log_with_user('create' if created else 'update', 'Pembayaran', instance.id, str(instance), perubahan)
 
 
 @receiver(post_delete, sender=Pembayaran)
 def log_pembayaran_delete(sender, instance, **kwargs):
-    """Log saat pembayaran dihapus"""
+    """Log saat pembayaran dihapus dengan backup data"""
     pembayaran_logger.warning(
         f"Pembayaran dihapus: Penyewaan {instance.penyewaan.kode_penyewaan}"
     )
     
-    LogAktivitas.objects.create(
-        aksi='delete',
-        model_name='Pembayaran',
-        object_id=instance.id,
-        object_repr=str(instance)
-    )
+    # Backup data yang dihapus
+    data_backup = {
+        'penyewaan': str(instance.penyewaan.kode_penyewaan),
+        'jumlah': str(instance.jumlah),
+        'metode_pembayaran': instance.metode_pembayaran,
+        'status': instance.status,
+        'bukti_pembayaran': instance.bukti_pembayaran
+    }
+    
+    create_log_with_user('delete', 'Pembayaran', instance.id, str(instance),
+        f"Data dihapus: {json.dumps(data_backup, ensure_ascii=False)}")
 
 
 # ==================== AUTH SIGNALS ====================

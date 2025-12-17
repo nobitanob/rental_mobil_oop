@@ -1,0 +1,113 @@
+# ============================================
+# Requirements untuk Aplikasi Rental Mobil Web
+# Django Framework + MySQL + REST API
+# ============================================
+
+# ==========================================
+# Core Django Framework
+# ==========================================
+Django>=5.0,<6.0
+
+# ==========================================
+# Database Drivers
+# ==========================================
+mysqlclient>=2.2.0          # MySQL database connector
+# PyMySQL>=1.1.0            # Alternatif jika mysqlclient gagal install
+
+# ==========================================
+# REST API Framework
+# ==========================================
+djangorestframework>=3.14.0  # Django REST Framework
+django-filter>=23.5          # Filtering untuk REST API
+django-cors-headers>=4.3.0   # CORS support untuk API
+
+# ==========================================
+# Production Server
+# ==========================================
+gunicorn>=21.0.0             # WSGI HTTP Server (Linux/Docker)
+# waitress>=2.1.0            # WSGI HTTP Server (Windows alternative)
+
+# ==========================================
+# Security & Authentication
+# ==========================================
+python-dotenv>=1.0.0         # Load environment variables dari .env
+django-environ>=0.11.0       # Environment configuration
+
+# ==========================================
+# Static Files & Media
+# ==========================================
+whitenoise>=6.6.0            # Serve static files in production
+Pillow>=10.0.0               # Image processing (untuk upload bukti pembayaran)
+
+# ==========================================
+# Date & Time
+# ==========================================
+python-dateutil>=2.8.0       # Date utilities
+pytz>=2024.1                 # Timezone support
+
+# ==========================================
+# Data Validation & Forms
+# ==========================================
+django-crispy-forms>=2.1     # Better form rendering
+crispy-bootstrap5>=2024.2    # Bootstrap 5 template pack
+
+# ==========================================
+# Admin Enhancement (Optional)
+# ==========================================
+# django-jazzmin>=2.6.0      # Modern admin theme
+# django-admin-interface>=0.28.0  # Customizable admin
+
+# ==========================================
+# Caching (Optional - untuk Redis)
+# ==========================================
+django-redis>=5.4.0          # Redis cache backend
+redis>=5.0.0                 # Redis client
+
+# ==========================================
+# Logging & Monitoring
+# ==========================================
+# sentry-sdk>=1.39.0         # Error tracking (production)
+
+# ==========================================
+# Development & Testing
+# ==========================================
+# pytest>=7.4.0              # Testing framework
+# pytest-django>=4.7.0       # Django test integration
+# coverage>=7.3.0            # Code coverage
+# django-debug-toolbar>=4.2.0  # Debug toolbar (development only)
+# factory-boy>=3.3.0         # Test data factories
+# faker>=22.0.0              # Fake data generation
+
+# ==========================================
+# Code Quality (Development)
+# ==========================================
+# flake8>=6.1.0              # Linting
+# black>=23.12.0             # Code formatting
+# isort>=5.13.0              # Import sorting
+# mypy>=1.8.0                # Type checking
+# django-stubs>=4.2.0        # Django type stubs
+
+# ==========================================
+# Documentation (Optional)
+# ==========================================
+# drf-spectacular>=0.27.0    # OpenAPI/Swagger untuk DRF
+# drf-yasg>=1.21.0           # Alternative API documentation
+
+# ==========================================
+# Task Queue (Optional - untuk background jobs)
+# ==========================================
+# celery>=5.3.0              # Distributed task queue
+# django-celery-beat>=2.5.0  # Periodic tasks
+# django-celery-results>=2.5.0  # Store task results
+
+# ==========================================
+# Email (Optional)
+# ==========================================
+# django-anymail>=10.2       # Email service integration
+
+# ==========================================
+# Export & Reporting (Optional)
+# ==========================================
+# openpyxl>=3.1.0            # Excel export
+# reportlab>=4.0.0           # PDF generation
+# django-import-export>=3.3.0  # Import/Export data admin

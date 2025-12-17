@@ -19,7 +19,7 @@ class Mobil(models.Model):
         max_length=15, 
         unique=True,
         validators=[RegexValidator(
-            regex=r'^[A-Z]{1,2}\s?\d{1,4}\s?[A-Z]{1,3}$',
+            regex=r'^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$',
             message='Format plat nomor tidak valid (contoh: B 1234 ABC)'
         )]
     )
@@ -249,4 +249,71 @@ class LogAktivitas(models.Model):
     
     def __str__(self):
         return f"[{self.created_at}] {self.user} - {self.get_aksi_display()} {self.model_name}"
+
+
+class DataVersion(models.Model):
+    """Model untuk menyimpan versi/snapshot data (Version Control)"""
+    
+    AKSI_CHOICES = [
+        ('create', 'Create'),
+        ('update', 'Update'),
+        ('delete', 'Delete'),
+        ('commit', 'Commit'),
+        ('rollback', 'Rollback'),
+    ]
+    
+    model_name = models.CharField(max_length=100, db_index=True)
+    object_id = models.IntegerField(db_index=True)
+    version = models.IntegerField(default=1)
+    data_snapshot = models.JSONField(help_text="Snapshot lengkap data object dalam JSON")
+    action = models.CharField(max_length=20, choices=AKSI_CHOICES, default='commit')
+    created_by = models.CharField(max_length=100, default='system')
+    created_at = models.DateTimeField(auto_now_add=True)
+    commit_message = models.TextField(blank=True, default='', help_text="Pesan commit untuk menjelaskan perubahan")
+    parent_version = models.ForeignKey(
+        'self', 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True,
+        related_name='child_versions',
+        help_text="Versi sebelumnya (parent)"
+    )
+    branch = models.CharField(max_length=50, default='main', help_text="Nama branch")
+    is_current = models.BooleanField(default=True, help_text="Apakah ini versi aktif saat ini")
+    
+    class Meta:
+        db_table = 'data_version'
+        verbose_name = 'Data Version'
+        verbose_name_plural = 'Data Versions'
+        ordering = ['-created_at']
+        unique_together = ['model_name', 'object_id', 'version', 'branch']
+        indexes = [
+            models.Index(fields=['model_name', 'object_id']),
+            models.Index(fields=['branch']),
+        ]
+    
+    def __str__(self):
+        return f"{self.model_name}#{self.object_id} v{self.version} ({self.branch}) - {self.action}"
+    
+    def get_data(self):
+        """Ambil data snapshot sebagai dictionary"""
+        return self.data_snapshot if isinstance(self.data_snapshot, dict) else {}
+    
+    def get_changes_from_parent(self):
+        """Bandingkan dengan parent version, return perubahan"""
+        if not self.parent_version:
+            return {'new': self.data_snapshot}
+        
+        old_data = self.parent_version.get_data()
+        new_data = self.get_data()
+        changes = {}
+        
+        all_keys = set(old_data.keys()) | set(new_data.keys())
+        for key in all_keys:
+            old_val = old_data.get(key)
+            new_val = new_data.get(key)
+            if old_val != new_val:
+                changes[key] = {'old': old_val, 'new': new_val}
+        
+        return changes
 

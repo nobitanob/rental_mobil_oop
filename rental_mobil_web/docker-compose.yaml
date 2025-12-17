@@ -1,0 +1,174 @@
+# ============================================
+# Docker Compose untuk Aplikasi Rental Mobil
+# Services: Django App + MySQL Database + Redis Cache
+# ============================================
+
+version: '3.9'
+
+services:
+  # ==========================================
+  # Django Web Application
+  # ==========================================
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production  # Gunakan 'development' untuk dev mode
+    container_name: rental_mobil_web
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Django settings
+      - DEBUG=False
+      - SECRET_KEY=${SECRET_KEY:-django-insecure-change-this-in-production}
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      
+      # Database settings
+      - DB_ENGINE=django.db.backends.mysql
+      - DB_NAME=rental_mobil
+      - DB_USER=rental_user
+      - DB_PASSWORD=${DB_PASSWORD:-rental_password_123}
+      - DB_HOST=db
+      - DB_PORT=3306
+      
+      # Redis settings (optional)
+      - REDIS_URL=redis://redis:6379/0
+      
+      # Timezone
+      - TZ=Asia/Jakarta
+    volumes:
+      # Persistent volumes
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+      - logs_volume:/app/logs
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - rental_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/admin/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ==========================================
+  # MySQL Database
+  # ==========================================
+  db:
+    image: mysql:8.0
+    container_name: rental_mobil_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=rental_mobil
+      - MYSQL_USER=rental_user
+      - MYSQL_PASSWORD=${DB_PASSWORD:-rental_password_123}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-root_password_123}
+      - TZ=Asia/Jakarta
+    ports:
+      - "3307:3306"  # Port 3307 untuk menghindari konflik dengan MySQL lokal
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # Script inisialisasi database (opsional)
+      # - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+    networks:
+      - rental_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-root_password_123}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ==========================================
+  # Redis Cache (Optional)
+  # ==========================================
+  redis:
+    image: redis:7-alpine
+    container_name: rental_mobil_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - rental_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ==========================================
+  # Nginx Reverse Proxy (Production)
+  # ==========================================
+  nginx:
+    image: nginx:alpine
+    container_name: rental_mobil_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - static_volume:/app/staticfiles:ro
+      - media_volume:/app/media:ro
+      # SSL certificates (uncomment untuk HTTPS)
+      # - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - web
+    networks:
+      - rental_network
+    profiles:
+      - production  # Hanya aktif dengan --profile production
+
+  # ==========================================
+  # phpMyAdmin (Development/Debug)
+  # ==========================================
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: rental_mobil_phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD:-root_password_123}
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - rental_network
+    profiles:
+      - debug  # Hanya aktif dengan --profile debug
+
+# ============================================
+# Networks
+# ============================================
+networks:
+  rental_network:
+    driver: bridge
+    name: rental_mobil_network
+
+# ============================================
+# Volumes
+# ============================================
+volumes:
+  mysql_data:
+    name: rental_mobil_mysql_data
+  redis_data:
+    name: rental_mobil_redis_data
+  static_volume:
+    name: rental_mobil_static
+  media_volume:
+    name: rental_mobil_media
+  logs_volume:
+    name: rental_mobil_logs

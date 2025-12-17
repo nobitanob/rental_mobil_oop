@@ -4,10 +4,78 @@ Middleware untuk logging request dan aktivitas
 import logging
 import time
 import json
+import threading
 from django.utils.deprecation import MiddlewareMixin
 
 logger = logging.getLogger('rental')
-security_logger = logging.getLogger('django.security')
+security_logger = logging.getLogger('rental.security')
+
+# Thread local storage untuk menyimpan request
+_thread_locals = threading.local()
+
+
+def get_current_request():
+    """Dapatkan request saat ini dari thread local"""
+    return getattr(_thread_locals, 'request', None)
+
+
+def get_current_user():
+    """Dapatkan user yang sedang login"""
+    request = get_current_request()
+    if request and hasattr(request, 'user') and request.user.is_authenticated:
+        return request.user
+    return None
+
+
+def get_current_username():
+    """Dapatkan username yang sedang login"""
+    user = get_current_user()
+    if user:
+        return user.username
+    return 'system'
+
+
+def get_client_ip():
+    """Dapatkan IP address dari request"""
+    request = get_current_request()
+    if request:
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            return x_forwarded_for.split(',')[0].strip()
+        return request.META.get('REMOTE_ADDR')
+    return None
+
+
+def get_user_agent():
+    """Dapatkan User Agent dari request"""
+    request = get_current_request()
+    if request:
+        return request.META.get('HTTP_USER_AGENT', '')[:255]
+    return ''
+
+
+class CurrentUserMiddleware:
+    """
+    Middleware untuk menyimpan request ke thread local storage.
+    Memungkinkan akses ke current user dari mana saja (signals, services, dll)
+    
+    PENTING: Middleware ini harus dipasang SETELAH AuthenticationMiddleware
+    """
+    
+    def __init__(self, get_response):
+        self.get_response = get_response
+    
+    def __call__(self, request):
+        # Simpan request ke thread local
+        _thread_locals.request = request
+        
+        response = self.get_response(request)
+        
+        # Bersihkan setelah request selesai
+        if hasattr(_thread_locals, 'request'):
+            del _thread_locals.request
+        
+        return response
 
 
 class RequestLoggingMiddleware(MiddlewareMixin):

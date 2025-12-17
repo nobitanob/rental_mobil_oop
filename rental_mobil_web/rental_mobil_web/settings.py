@@ -48,7 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # Custom middleware untuk logging
+    # Custom middleware untuk logging & user tracking
+    'rental.middleware.CurrentUserMiddleware',  # HARUS setelah AuthenticationMiddleware
     'rental.middleware.RequestLoggingMiddleware',
     'rental.middleware.SecurityLoggingMiddleware',
     'rental.middleware.UserActivityMiddleware',
@@ -120,7 +121,10 @@ TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
-USE_TZ = True
+# Set USE_TZ = False karena MySQL tidak memiliki timezone definitions
+# Untuk production, install timezone data di MySQL dengan:
+# mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
